@@ -22,14 +22,18 @@ namespace Calculator
             double SumR = Convert.ToDouble(textBox2.Text);
             string ProcD = Convert.ToString(textBox3);
             int kolD = Convert.ToInt32(textBox4.Text);
+
+
             double[] razd = textBox3.Text.Split(' ').Select(x => double.Parse(x)).ToArray();
-            var r = ProcD.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
-            r = r / 10 / kolD;
-            textBox6.Text = Convert.ToString(r);
+            var ProcOk = ProcD.Where(x => char.IsDigit(x)).Sum(x => char.GetNumericValue(x));
+            ProcOk = ProcOk / 10 / kolD;
+
+            textBox6.Text = Convert.ToString(ProcOk);
+
             foreach (var Sum in razd)
             {
-                textBox1.Text = Convert.ToString((SumR / 100) * r * kolD + SumR);
-                textBox5.Text = Convert.ToString(((SumR / 100) * r * kolD + SumR) - SumR);
+                textBox1.Text = Convert.ToString((SumR / 100) * ProcOk * kolD + SumR);
+                textBox5.Text = Convert.ToString(((SumR / 100) * ProcOk * kolD + SumR) - SumR);
             }
             
         }
