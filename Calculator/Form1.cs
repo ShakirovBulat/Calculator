@@ -49,7 +49,7 @@ namespace Calculator
             }
             if (!(kolD == b))
             {
-                MessageBox.Show("что-то пошло не так!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Введено неправильное кол-во дней", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
