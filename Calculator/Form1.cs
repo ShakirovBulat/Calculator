@@ -19,15 +19,16 @@ namespace Calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int SumR = Convert.ToInt32(textBox1);
-            int ProcD = Convert.ToInt32(textBox3);
-            int kolD = Convert.ToInt32(textBox2);
-            int ObSum = 0;
+            double SumR = Convert.ToDouble(textBox2.Text);
+            string ProcD = Convert.ToString(textBox3);
+            int kolD = Convert.ToInt32(textBox4.Text);
+            string[] razd = ProcD.Split(';');
 
-            for (int i = 1; i <= kolD; i++)
+            foreach(var sub in razd)
             {
-                ObSum = (SumR / 100) * ProcD;
+                textBox1.Text = Convert.ToString((SumR / 100) * 0.9 * kolD + SumR);
             }
+            textBox5.Text = Convert.ToString(((SumR / 100) * 0.9 * kolD + SumR) - SumR);
         }
     }
 }
