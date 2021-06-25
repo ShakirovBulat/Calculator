@@ -35,7 +35,22 @@ namespace Calculator
                 textBox1.Text = Convert.ToString((SumR / 100) * ProcOk * kolD + SumR);
                 textBox5.Text = Convert.ToString(((SumR / 100) * ProcOk * kolD + SumR) - SumR);
             }
-            
+            string n = Convert.ToString(textBox3);
+            char a = ' ';
+            int i = 0;
+            int b = -1;
+            while (i != n.Length)
+            {
+                if (n[i] == a && ((n[i - 1] != a) || (i - 1 < 0)) && n[i + 1] != a)
+                {
+                    b++;
+                }
+                i++;
+            }
+            if (!(kolD == b))
+            {
+                MessageBox.Show("что-то пошло не так!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
