@@ -22,9 +22,9 @@ namespace Calculator
             double SumR = Convert.ToDouble(textBox2.Text);
             string ProcD = Convert.ToString(textBox3);
             int kolD = Convert.ToInt32(textBox4.Text);
-            string[] razd = ProcD.Split(';');
+            double[] razd = textBox3.Text.Split(' ').Select(x => double.Parse(x)).ToArray();
 
-            foreach(var sub in razd)
+            foreach(var Sum in razd)
             {
                 textBox1.Text = Convert.ToString((SumR / 100) * 0.9 * kolD + SumR);
             }
